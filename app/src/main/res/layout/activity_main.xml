@@ -1,11 +1,39 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context=".MainActivity"
+    android:id="@+id/">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <RadioGroup
+        android:id="@+id/rg_tab"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <RadioButton
+            style="@style/left_tab"
+            android:drawableTop="@drawable/nav_icon1_normal"
+            android:background="@drawable/nav_bg_select"
+            android:text="故障设置" />
+
+        <RadioButton
+            style="@style/left_tab"
+            android:drawableTop="@drawable/nav_icon2_normal"
+            android:text="电压数据" />
+
+        <RadioButton
+            style="@style/left_tab"
+            android:drawableTop="@drawable/nav_icon3_normal"
+            android:text="波形查看" />
+
+        <RadioButton
+            style="@style/left_tab"
+            android:drawableTop="@drawable/nav_icon4_normal"
+            android:text="系统信息" />
+
+    </RadioGroup>
+
+</LinearLayout>
