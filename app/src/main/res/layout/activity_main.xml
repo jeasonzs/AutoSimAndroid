@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="0dp"
     tools:context=".MainActivity"
-    android:id="@+id/">
+    android:id="@+id/activity_main">
 
     <RadioGroup
         android:id="@+id/rg_tab"
@@ -16,7 +16,6 @@
         <RadioButton
             style="@style/left_tab"
             android:drawableTop="@drawable/nav_icon1_normal"
-            android:background="@drawable/nav_bg_select"
             android:text="故障设置" />
 
         <RadioButton
