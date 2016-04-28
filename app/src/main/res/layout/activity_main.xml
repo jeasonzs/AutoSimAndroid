@@ -1,38 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="0dp"
-    tools:context=".MainActivity"
-    android:id="@+id/activity_main">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
 
-    <RadioGroup
-        android:id="@+id/rg_tab"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent">
 
-        <RadioButton
-            style="@style/left_tab"
-            android:drawableTop="@drawable/nav_icon1_normal"
-            android:text="故障设置" />
 
-        <RadioButton
-            style="@style/left_tab"
-            android:drawableTop="@drawable/nav_icon2_normal"
-            android:text="电压数据" />
+    <android.support.v4.app.FragmentTabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="300px"
+        android:layout_height="480px"
+        android:orientation="vertical" >
+        <!--android:background="@drawable/bg_tabhost_bg">-->
 
-        <RadioButton
-            style="@style/left_tab"
-            android:drawableTop="@drawable/nav_icon3_normal"
-            android:text="波形查看" />
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0" />
+    </android.support.v4.app.FragmentTabHost>
 
-        <RadioButton
-            style="@style/left_tab"
-            android:drawableTop="@drawable/nav_icon4_normal"
-            android:text="系统信息" />
-
-    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/realtabcontent"
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
 
 </LinearLayout>
