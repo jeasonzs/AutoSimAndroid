@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
-        <color android:color="#ff0000"/>
+        <color android:color="#ff7d01"/>
     </item>
     <item android:state_checked="true">
-        <color android:color="#ff0000"/>
+        <color android:color="#ff7d01"/>
     </item>
-    <item>
-        <color android:color="#a0a0a0"/>
-    </item>
+    <!--<item>-->
+        <!--<color android:color="#f7f7f7"/>-->
+    <!--</item>-->
+    <item android:drawable="@drawable/nav_bg_normal"/>
 </selector>  
