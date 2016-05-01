@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ff0000" >
+    tools:context=".IssueSetFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_weight="0.75"
+        android:layout_marginBottom="6.5dp">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.5"
+            android:layout_marginRight="17dp">
+            <TextView
+                style="@style/list_header_orange"
+                android:text="故障号"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listViewIssueNum"
+                android:layout_gravity="center"
+                android:divider="#f0f0f0"
+                android:background="#f0f0f0" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="17dp">
+            <TextView
+                style="@style/list_header_gray"
+                android:text="故障类型"/>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listViewIssueType"
+                android:layout_gravity="center"
+                android:divider="@color/light_gray"
+                android:background="@color/light_gray" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:orientation="horizontal"
+        android:layout_weight="0.25"
+        android:layout_marginTop="6.5dp">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.8"
+            android:layout_marginRight="17dp">
+            <TextView
+                style="@style/list_header_gray"
+                android:text="已设置故障信息"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray"
+                    android:text="sdflskdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskd
+                lsdflskdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskdlsdfls
+                kdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskdlsdflskdfjsdfskdl"
+                    android:gravity="left"/>
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:background="@color/light_gray"
+            android:layout_marginLeft="17dp">
+            <TextView
+                style="@style/list_header_gray"
+                android:text="清除所有"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_gray"
+                    android:src="@drawable/icon_del"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

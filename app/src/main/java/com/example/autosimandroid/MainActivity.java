@@ -11,12 +11,17 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
     private WebView webview;
     private FragmentManager fragmentManager;
     private RadioGroup radioGroup;
+    private IssueSetFragment issueSetFragment = new IssueSetFragment();
+    private VolDataFragment volDataFragment = new VolDataFragment();
+    private WaveDataFragment waveDataFragment = new WaveDataFragment();
+    private SettingFragment settingFragment = new SettingFragment();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,39 +43,38 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
 
+
+
         fragmentManager = getFragmentManager();
         radioGroup = (RadioGroup) findViewById(R.id.rg_tab);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                Log.v("autoSim","click");
+                Log.v("autoSim","click"+String.valueOf(checkedId)+"___"+String.valueOf(R.id.rb_1));
                 android.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
-                IssueSetFragment fragment = new IssueSetFragment();
-                transaction.replace(R.id.tabcontent, fragment);
+                switch (checkedId) {
+                    case R.id.rb_1:
+                        transaction.replace(R.id.tabcontent, issueSetFragment);
+                        break;
+                    case R.id.rb_2:
+                        transaction.replace(R.id.tabcontent, volDataFragment);
+                        break;
+                    case R.id.rb_3:
+                        transaction.replace(R.id.tabcontent, waveDataFragment);
+                        break;
+                    case R.id.rb_4:
+                        transaction.replace(R.id.tabcontent, settingFragment);
+                        break;
+                    default:
+                        transaction.replace(R.id.tabcontent, issueSetFragment);
+                        break;
+                }
                 transaction.commit();
             }
         });
+
+        radioGroup.check(R.id.rb_1);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

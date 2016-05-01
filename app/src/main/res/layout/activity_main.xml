@@ -17,24 +17,28 @@
         android:layout_height="match_parent">
 
         <RadioButton
+            android:id="@+id/rb_1"
             style="@style/left_tab"
             android:drawableTop="@drawable/nav_icon1_selector"
-            android:text="test" />
+            android:text="故障设置" />
 
         <RadioButton
+            android:id="@+id/rb_2"
             style="@style/left_tab"
             android:drawableTop="@drawable/nav_icon2_selector"
-            android:text="test" />
+            android:text="电压数据" />
 
         <RadioButton
+            android:id="@+id/rb_3"
             style="@style/left_tab"
             android:drawableTop="@drawable/nav_icon3_selector"
-            android:text="test" />
+            android:text="波形查看" />
 
         <RadioButton
+            android:id="@+id/rb_4"
             style="@style/left_tab"
             android:drawableTop="@drawable/nav_icon4_selector"
-            android:text="test" />
+            android:text="系统设置" />
 
     </RadioGroup>
 
@@ -44,6 +48,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0"
-        android:background="#0000ff"/>
+        android:paddingLeft="30dp"
+        android:paddingTop="13dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="13dp"/>
 
 </LinearLayout>
