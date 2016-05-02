@@ -6,9 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 public class IssueSetFragment extends Fragment{
@@ -29,7 +33,17 @@ public class IssueSetFragment extends Fragment{
         listView.setAdapter(new ArrayAdapter<String>(view.getContext(),R.layout.list_item, strs));
 
         listViewIssueType = (ListView) view.findViewById(R.id.listViewIssueType);
-        listViewIssueType.setAdapter(new ArrayAdapter<String>(view.getContext(),R.layout.list_item,issueTypeStrs));
+        listViewIssueType.setAdapter(new ArrayAdapter<String>(view.getContext(), R.layout.list_item, issueTypeStrs));
+
+        ImageButton btn = (ImageButton) view.findViewById(R.id.btn_del_all_issue);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i < 32; i++) {
+                    strs[i] = "故障" + String.valueOf(i);
+                }
+            }
+        });
         return view;
     }
 }

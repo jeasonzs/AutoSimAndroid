@@ -3,6 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/wave_data"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:background="#300f26"
+        android:layout_weight="0.75"
+        android:layout_marginBottom="6.5dp">
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:orientation="horizontal"
+        android:layout_weight="0.25"
+        android:layout_marginTop="6.5dp">
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -2,8 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#005500" >
+    android:orientation="vertical" >
 
+        <LinearLayout
+            style="@style/list_header_orange"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/list_header_orange"
+                android:layout_width="0px"
+                android:layout_weight="0.1"
+                android:text="故障号"/>
+            <TextView
+                style="@style/list_header_orange"
+                android:layout_width="0px"
+                android:layout_weight="0.1"
+                android:text="电压1(V)"/>
+            <TextView
+                style="@style/list_header_orange"
+                android:layout_width="0px"
+                android:layout_weight="0.1"
+                android:text="电压2(V)"/>
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listViewVolData"
+            android:layout_gravity="center"
+            android:divider="#f0f0f0"
+            android:background="#f0f0f0" />
 
 </LinearLayout>
