@@ -27,24 +27,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-//        webview = (WebView) findViewById(R.id.webview);
-//        webview.getSettings().setJavaScriptEnabled(true);
-//        webview.getSettings().setUseWideViewPort(true);
-//        webview.getSettings().setLoadWithOverviewMode(true);
-//        webview.setInitialScale(100);
-//        webview.loadUrl("http://107.170.213.190/index.html");
-//
-//        webview.setWebViewClient(new WebViewClient() {
-//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//                view.loadUrl(url);
-//                return true;
-//            }
-//        });
-
-
-
-
         fragmentManager = getFragmentManager();
         radioGroup = (RadioGroup) findViewById(R.id.rg_tab);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
