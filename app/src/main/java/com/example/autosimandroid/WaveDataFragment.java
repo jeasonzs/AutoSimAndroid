@@ -18,6 +18,7 @@ public class WaveDataFragment extends Fragment{
     private Thread thread;
     private Handler handler = new Handler() {
         public void handleMessage(Message msg) {
+            Log.v("autoSim","timer");
             super.handleMessage(msg);
             int[] waveData = new int[1600];
             for (int i = 0; i < 1600; i++) {
@@ -57,7 +58,7 @@ public class WaveDataFragment extends Fragment{
             {
                 while(true) {
                     try {
-                        Thread.sleep(50);
+                        Thread.sleep(1000);
                         Message message = new Message();
                         message.what = 1;
                         handler.sendMessage(message);
@@ -69,9 +70,6 @@ public class WaveDataFragment extends Fragment{
         });
         thread.start();
 
-
-
         return view;
     }
-
 }

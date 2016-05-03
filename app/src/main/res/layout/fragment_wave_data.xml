@@ -10,7 +10,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:background="#300f26"
-        android:layout_weight="0.75"
+        android:layout_weight="0.85"
         android:layout_marginBottom="6.5dp">
 
     </LinearLayout>
@@ -19,8 +19,40 @@
         android:layout_width="match_parent"
         android:layout_height="0px"
         android:orientation="horizontal"
-        android:layout_weight="0.25"
-        android:layout_marginTop="6.5dp">
+        android:layout_weight="0.15"
+        android:layout_marginTop="6.5dp"
+        android:weightSum="1">
+        <Button
+            style="@style/wave_ctrl_style"
+            android:text="X轴"
+            android:drawableRight="@drawable/icon_zoom_in"/>
+        <Button
+            style="@style/wave_ctrl_style"
+            android:text="X轴"
+            android:drawableRight="@drawable/icon_zoom_out"/>
+        <Button
+            style="@style/wave_ctrl_style"
+            android:text="Y轴"
+            android:drawableRight="@drawable/icon_zoom_in"/>
+        <Button
+            style="@style/wave_ctrl_style"
+            android:text="Y轴"
+            android:drawableRight="@drawable/icon_zoom_out"/>
+        <Button
+            style="@style/wave_ctrl_style"
+            android:text="向上"
+            android:drawableRight="@drawable/icon_move"/>
+        <Button
+            style="@style/wave_ctrl_style"
+            android:text="向下"
+            android:drawableRight="@drawable/icon_move"/>
+
+        <Button
+            style="@style/wave_ctrl_style"
+            android:layout_width="25dp"
+            android:paddingLeft="4dp"
+            android:drawableLeft="@drawable/icon_reset"/>
+
 
     </LinearLayout>
 
