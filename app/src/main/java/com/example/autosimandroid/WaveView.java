@@ -161,19 +161,21 @@ public class WaveView extends ImageView {
             WaveChannel channel = (WaveChannel)val;
             int[] wave = channel.wave;
 
-            paint.setColor(channel.color);
-            for (int j = 1; j < waveRect.width(); j++) {
-                int waveCnt = Math.round((float)(wave.length)/waveRect.width()*j);
-                int x = waveRect.left+j;
-                int tmp1 = (int)(waveRect.height()/2 * (1.0 - channel.pos));
-                int tmp2 = (int)(wave[waveCnt] / (girdValueY*8/waveRect.height()));
-                int tmp3 = (int)((girdValueY*8/waveRect.height()));
-                int y = (int)(waveRect.top+waveRect.height()/2 * (1.0 - channel.pos) - wave[waveCnt] / (girdValueY*8/waveRect.height()));
-                y =  checkInRect(y,waveRect);
-                if(j == 1) {
-                    path.moveTo(x, y);
+            if(wave != null) {
+                paint.setColor(channel.color);
+                for (int j = 1; j < waveRect.width(); j++) {
+                    int waveCnt = Math.round((float)(wave.length)/waveRect.width()*j);
+                    int x = waveRect.left+j;
+                    int tmp1 = (int)(waveRect.height()/2 * (1.0 - channel.pos));
+                    int tmp2 = (int)(wave[waveCnt] / (girdValueY*8/waveRect.height()));
+                    int tmp3 = (int)((girdValueY*8/waveRect.height()));
+                    int y = (int)(waveRect.top+waveRect.height()/2 * (1.0 - channel.pos) - wave[waveCnt] / (girdValueY*8/waveRect.height()));
+                    y =  checkInRect(y,waveRect);
+                    if(j == 1) {
+                        path.moveTo(x, y);
+                    }
+                    path.lineTo(x,y);
                 }
-                path.lineTo(x,y);
             }
         }
         canvas.drawPath(path, paint);

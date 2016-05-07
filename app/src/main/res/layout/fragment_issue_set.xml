@@ -28,8 +28,10 @@
                 android:layout_height="match_parent"
                 android:id="@+id/listViewIssueNum"
                 android:layout_gravity="center"
-                android:divider="#f0f0f0"
-                android:background="#f0f0f0" />
+                android:divider="@color/light_gray"
+                android:background="@color/light_gray"
+                android:choiceMode="singleChoice"
+                android:listSelector="@drawable/listview_background_selector"/>
         </LinearLayout>
 
 
