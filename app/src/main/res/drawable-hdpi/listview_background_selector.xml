@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true">
-        <color android:color="#ff7d01"/>
-    </item>
     <item>
-        <color android:color="@color/light_orange"/>
+        <color android:color="@color/light_gray"/>
     </item>
+    <item android:state_pressed="true">
+        <color android:color="@color/dark_orange"/>
+    </item>
+    <item android:state_selected="true">
+        <color android:color="@color/dark_orange"/>
+    </item>
+
+    <item android:state_focused="true">
+        <color android:color="@color/dark_orange"/>
+    </item>
+
 
 
 </selector>  

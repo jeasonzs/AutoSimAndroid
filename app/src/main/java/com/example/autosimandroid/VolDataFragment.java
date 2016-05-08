@@ -1,7 +1,10 @@
 package com.example.autosimandroid;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.annotation.LayoutRes;
 import android.util.JsonToken;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +21,8 @@ import org.json.JSONTokener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
 
@@ -108,4 +113,5 @@ public class VolDataFragment extends Fragment{
         }
         adapter.notifyDataSetChanged();
     }
+
 }
