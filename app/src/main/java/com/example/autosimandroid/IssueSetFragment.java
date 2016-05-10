@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.util.List;
 import java.util.Map;
 
@@ -46,7 +48,7 @@ public class IssueSetFragment extends Fragment{
         listViewIssueType.setAdapter(new SmartAdapter<String>(view.getContext(), R.layout.list_item, issueTypeStrs));
 
 
-        Log.v("autoSim","select=" + listView.getSelectedItemPosition());
+        Log.v("autoSim", "select=" + listView.getSelectedItemPosition());
         ImageButton btn = (ImageButton) view.findViewById(R.id.btn_del_all_issue);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,11 +72,16 @@ public class IssueSetFragment extends Fragment{
         listViewIssueType.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ((SmartAdapter<String>)parent.getAdapter()).setSelection(position);
-                ((SmartAdapter<String>)parent.getAdapter()).notifyDataSetChanged();
+                ((SmartAdapter<String>) parent.getAdapter()).setSelection(position);
+                ((SmartAdapter<String>) parent.getAdapter()).notifyDataSetChanged();
                 Log.v("autoSim", "click=" + position + ",select=" + parent.getSelectedItemPosition());
+
+                HttpClient.getFromUrl("http://10.0.2.2:8000/service/issueContrl.py");
             }
         });
+
+
+
         return view;
     }
 

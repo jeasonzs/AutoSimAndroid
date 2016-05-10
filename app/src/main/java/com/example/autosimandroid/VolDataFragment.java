@@ -32,7 +32,7 @@ import de.tavendo.autobahn.WebSocketHandler;
 
 public class VolDataFragment extends Fragment{
     private static final String TAG = "autoSim";
-    final static String wsuri = "ws://192.168.10.175:8000/service/volPush.py";
+    final static String wsuri = "ws://10.0.2.2:8000/service/volPush.py";
 
     private ListView listView;
     private final ArrayList<HashMap<String,Object>> listItem = new ArrayList<HashMap<String,Object>> ();

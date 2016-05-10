@@ -22,8 +22,8 @@ import de.tavendo.autobahn.WebSocketHandler;
 
 public class WaveDataFragment extends Fragment{
     private static final String TAG = "autoSim";
-    //final static String wsuri = "ws://10.0.2.2:8000/service/wavePush.py";
-    final static String wsuri = "ws://192.168.10.175:8000/service/wavePush.py";
+    final static String wsuri = "ws://10.0.2.2:8000/service/wavePush.py";
+//    final static String wsuri = "ws://192.168.10.175:8000/service/wavePush.py";
 
     private WaveView waveView;
     private final WebSocketConnection mConnection = new WebSocketConnection();
