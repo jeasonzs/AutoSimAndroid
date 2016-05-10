@@ -58,7 +58,7 @@ public class WaveView extends ImageView {
         channelHashMap.get(channel).wave = wave;
     }
 
-    public void setPos(String channel, int pos) {
+    public void setPos(String channel, float pos) {
         channelHashMap.get(channel).pos = pos;
     }
 

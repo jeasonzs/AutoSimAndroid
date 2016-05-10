@@ -23,31 +23,38 @@
         android:layout_marginTop="6.5dp"
         android:weightSum="1">
         <Button
+            android:id="@+id/btn_wave_x_zoom_in"
             style="@style/wave_ctrl_style"
             android:text="X轴"
             android:drawableRight="@drawable/icon_zoom_in"/>
         <Button
+            android:id="@+id/btn_wave_x_zoom_out"
             style="@style/wave_ctrl_style"
             android:text="X轴"
             android:drawableRight="@drawable/icon_zoom_out"/>
         <Button
+            android:id="@+id/btn_wave_y_zoom_in"
             style="@style/wave_ctrl_style"
             android:text="Y轴"
             android:drawableRight="@drawable/icon_zoom_in"/>
         <Button
+            android:id="@+id/btn_wave_y_zoom_out"
             style="@style/wave_ctrl_style"
             android:text="Y轴"
             android:drawableRight="@drawable/icon_zoom_out"/>
         <Button
+            android:id="@+id/btn_wave_move_up"
             style="@style/wave_ctrl_style"
             android:text="向上"
             android:drawableRight="@drawable/icon_move"/>
         <Button
+            android:id="@+id/btn_wave_move_down"
             style="@style/wave_ctrl_style"
             android:text="向下"
             android:drawableRight="@drawable/icon_move"/>
 
         <Button
+            android:id="@+id/btn_wave_reset"
             style="@style/wave_ctrl_style"
             android:layout_width="25dp"
             android:paddingLeft="4dp"
