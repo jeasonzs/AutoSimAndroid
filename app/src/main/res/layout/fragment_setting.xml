@@ -2,8 +2,175 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#005550" >
+    android:orientation="vertical" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:src="@drawable/name_start" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:text="系统版本：V1.0"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:text="序列ID：011-345-456" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="8sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:text="(本软件版权为上海景格科技有限公司所有，保留所有权利)" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/dark_orange"
+                android:text="www.jingge.com" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_gravity="center"
+            android:src="@drawable/name_start" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:layout_gravity="center"
+                android:text="车辆信号处理系统"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:src="@drawable/connect_ok"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="8sp"
+                android:padding="2dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/dark_gray"
+                android:layout_gravity="center"
+                android:text="连接成功！"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_gravity="center"
+            android:src="@drawable/name_start" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:layout_gravity="center"
+                android:text="语言设定"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:text="语言设定"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:src="@drawable/name_start" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:text="系统更新"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:text="上次更新时间：2016-06-12" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:padding="2dp"
+                android:textColor="@color/def_text_color"
+                android:text="可下载最新版本：V5.1" />
+            <Button
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                android:background="@drawable/btn_update_bg"
+                android:text="一键升级"/>
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

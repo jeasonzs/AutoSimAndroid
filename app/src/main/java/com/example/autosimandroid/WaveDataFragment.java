@@ -1,6 +1,7 @@
 package com.example.autosimandroid;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.os.Message;
 import android.os.Handler;
@@ -30,6 +31,7 @@ public class WaveDataFragment extends Fragment implements View.OnClickListener{
     private final WebSocketConnection mConnection = new WebSocketConnection();
     private float pos1 = 0;
     private float girdy1 = 2000;
+    private int sample = 0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -96,21 +98,36 @@ public class WaveDataFragment extends Fragment implements View.OnClickListener{
         mConnection.disconnect();
     }
 
+    private void setSample(int sample) {
+        try {
+
+            JSONObject json = new JSONObject();
+            json.put("sample",sample);
+            mConnection.sendTextMessage(json.toString());
+        }catch (JSONException e) {}
+    }
+
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.btn_wave_x_zoom_in:
+                if(this.sample > 0) {
+                    this.sample--;
+                    setSample(this.sample);
+                }
                 break;
             case R.id.btn_wave_x_zoom_out:
+                this.sample++;
+                setSample(this.sample);
                 break;
             case R.id.btn_wave_y_zoom_in:
-                girdy1 += 50;
-                waveView.setGirdValueY(girdy1);
-                break;
-            case R.id.btn_wave_y_zoom_out:
                 if (girdy1 > 50) {
                     girdy1 -= 50;
                 }
+                waveView.setGirdValueY(girdy1);
+                break;
+            case R.id.btn_wave_y_zoom_out:
+                girdy1 += 50;
                 waveView.setGirdValueY(girdy1);
                 break;
             case R.id.btn_wave_move_up:
@@ -122,6 +139,10 @@ public class WaveDataFragment extends Fragment implements View.OnClickListener{
                 waveView.setPos("ch1",pos1);
                 break;
             case R.id.btn_wave_reset:
+                FragmentManager fragmentManager = getActivity().getFragmentManager();
+                android.app.FragmentTransaction transaction = fragmentManager.beginTransaction();
+                transaction.replace(R.id.tabcontent, new SettingFragment());
+                transaction.commit();
                 break;
 
         }

@@ -6,6 +6,6 @@
     <color name="def_text_color">#333333</color>
     <color name="dark_gray">#a9aaab</color>
     <color name="light_gray">#f0f0f0</color>
-    <color name="dark_orange">#ff7d01</color>
+    <color name="dark_orange">#ff7d00</color>
     <color name="light_orange">#fab87b</color>
 </resources>
