@@ -38,6 +38,9 @@ public class IssueSetFragment extends Fragment{
     private static ListView listViewIssueType;
     private SmartAdapter<String> adpIssueNum;
     private SmartAdapter<String> adpIssueType;
+//    private final static String host = "10.0.2.2";
+    private static final String host = "localhost";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -69,7 +72,7 @@ public class IssueSetFragment extends Fragment{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 adpIssueNum.setSelection(position);
                 adpIssueNum.notifyDataSetChanged();
-                HttpClient.get("http://10.0.2.2:8000/service/issueContrl.py?opt=getIssue&num=" + position, new Handler() {
+                HttpClient.get("http://"+host+":8000/service/issueContrl.py?opt=getIssue&num=" + position, new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
@@ -90,7 +93,7 @@ public class IssueSetFragment extends Fragment{
                 ((SmartAdapter<String>) parent.getAdapter()).setSelection(position);
                 ((SmartAdapter<String>) parent.getAdapter()).notifyDataSetChanged();
                 Log.v("autoSim", "click=" + position + ",select=" + parent.getSelectedItemPosition());
-                HttpClient.get("http://10.0.2.2:8000/service/issueContrl.py?opt=setIssue&num="+adpIssueNum.getSelection()+"&type="+position, new Handler() {
+                HttpClient.get("http://"+host+":8000/service/issueContrl.py?opt=setIssue&num="+adpIssueNum.getSelection()+"&type="+position, new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
