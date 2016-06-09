@@ -54,6 +54,7 @@ public class VolDataFragment extends Fragment{
                 new int[] {R.id.item_text1,R.id.item_text2,R.id.item_text3});
         listView.setAdapter(adapter);
         startGetVol();
+        setVolData(null,null);
         return view;
     }
 
@@ -105,8 +106,8 @@ public class VolDataFragment extends Fragment{
         listItem.clear();
         for(int i = 0; i < 32; i++) {
             HashMap<String,Object> map = new HashMap<String,Object>();
-            int n1 = i < vol1.length?vol1[i]:0;
-            int n2 = i < vol2.length?vol2[i]:0;
+            int n1 = (vol1 == null )?0:(i < vol1.length?vol1[i]:0);
+            int n2 = (vol2 == null )?0:(i < vol2.length?vol2[i]:0);
 
             map.put("item_text1","故障"+i);
             map.put("item_text2",n1/100.0);
