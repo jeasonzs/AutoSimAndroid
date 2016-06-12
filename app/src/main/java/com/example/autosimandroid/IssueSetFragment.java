@@ -31,7 +31,6 @@ import java.util.Map;
 
 
 public class IssueSetFragment extends Fragment{
-    private static String[] strs = new String[32];
     private static final String[] issueTypeStrs = new String[]{"清除故障","断路","对地断路","串联电阻",
             "并联电阻","间隙性断路","间隙性对地断路","间隙性串联电阻","间隙性并联电阻"};
     private static ListView listView;
@@ -40,13 +39,32 @@ public class IssueSetFragment extends Fragment{
     private SmartAdapter<String> adpIssueType;
 //    private final static String host = "10.0.2.2";
     private static final String host = "localhost";
-
+    private static final String[] strs = {"质量空气流量加热电源线",
+    "质量空气流量加热信号线",
+    "进气温度传感器信号线",
+    "加热型氧传感器2信号线",
+    "加热型氧传感器1信号线",
+    "进气凸轮轴位置传感器信号线",
+    "排气凸轮轴位置传感器信号线",
+    "油门踏板位置传感器1电源线",
+    "油门踏板位置传感器2电源线",
+    "加热型氧传感器2加热丝电源线",
+    "加热型氧传感器1加热丝电源线",
+    "进气凸轮轴位置传感器电源线",
+    "进气凸轮轴位置传感器接地线",
+    "排气凸轮轴位置传感器电源线",
+    "排气凸轮轴位置传感器接地线",
+    "质量空气流量加热接地线",
+    "进气温度传感器接地线",
+    "蒸发排放碳罐吹洗电磁阀电源线",
+    "蒸发排放碳罐吹洗电磁阀接地线",
+    "故障19"};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        for(int i = 0;i<32; i++) {
-            strs[i] = "故障"+String.valueOf(i);
-        }
+//        for(int i = 0;i<32; i++) {
+//            strs[i] = "故障"+String.valueOf(i);
+//        }
         View view = inflater.inflate(R.layout.fragment_issue_set, null);
 
         listView = (ListView) view.findViewById(R.id.listViewIssueNum);

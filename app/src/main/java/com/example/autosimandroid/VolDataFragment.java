@@ -41,6 +41,27 @@ public class VolDataFragment extends Fragment{
     private SimpleAdapter adapter;
     private final WebSocketConnection mConnection = new WebSocketConnection();
 
+    private static final String[] strs = {"质量空气流量加热电源线",
+            "质量空气流量加热信号线",
+            "进气温度传感器信号线",
+            "加热型氧传感器2信号线",
+            "加热型氧传感器1信号线",
+            "进气凸轮轴位置传感器信号线",
+            "排气凸轮轴位置传感器信号线",
+            "油门踏板位置传感器1电源线",
+            "油门踏板位置传感器2电源线",
+            "加热型氧传感器2加热丝电源线",
+            "加热型氧传感器1加热丝电源线",
+            "进气凸轮轴位置传感器电源线",
+            "进气凸轮轴位置传感器接地线",
+            "排气凸轮轴位置传感器电源线",
+            "排气凸轮轴位置传感器接地线",
+            "质量空气流量加热接地线",
+            "进气温度传感器接地线",
+            "蒸发排放碳罐吹洗电磁阀电源线",
+            "蒸发排放碳罐吹洗电磁阀接地线",
+            "故障19"};
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -104,12 +125,12 @@ public class VolDataFragment extends Fragment{
 
     private void setVolData(int[] vol1,int[] vol2) {
         listItem.clear();
-        for(int i = 0; i < 32; i++) {
+        for(int i = 0; i < strs.length; i++) {
             HashMap<String,Object> map = new HashMap<String,Object>();
             int n1 = (vol1 == null )?0:(i < vol1.length?vol1[i]:0);
             int n2 = (vol2 == null )?0:(i < vol2.length?vol2[i]:0);
 
-            map.put("item_text1","故障"+i);
+            map.put("item_text1",strs[i]);
             map.put("item_text2",n1/100.0);
             map.put("item_text3",n2/100.0);
             listItem.add(map);
